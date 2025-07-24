@@ -821,24 +821,7 @@
         </div>
     </section>
 
-    <!-- PayPal Payment Section -->
-    <section class="paypal-section">
-        <div class="container">
-            <h2>Secure Payment Options</h2>
-            <p>Pay securely with PayPal - no account required</p>
-            <div class="paypal-buttons">
-                <a href="#" class="paypal-btn" onclick="payWithPayPal('basic')">
-                    <i class="fab fa-paypal"></i> Pay $250 (Basic)
-                </a>
-                <a href="#" class="paypal-btn" onclick="payWithPayPal('standard')">
-                    <i class="fab fa-paypal"></i> Pay $500 (Standard)
-                </a>
-                <a href="#" class="paypal-btn" onclick="payWithPayPal('premium')">
-                    <i class="fab fa-paypal"></i> Pay $950 (Premium)
-                </a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
@@ -881,9 +864,35 @@
                 <p>Ready to modernize your business? Fill out the form below and we'll get back to you within 24 hours</p>
             </div>
             <div class="form-container">
-                <form action="https://formspree.io/f/your-form-id" method="POST">
+                <form action="https://formspree.io/f/digitalfixer7@gmail.com" method="POST">
                     <div class="form-group">
-                        <label for="business-name">Business Name *</label>
+                        <label for="business-description">Tell us about your business *</label>
+                        <textarea id="business-description" name="business-description" rows="4" placeholder="Describe your business, target audience, and what you hope to achieve..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Preferred Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select timeline</option>
+                            <option value="asap">ASAP (Rush order)</option>
+                            <option value="1-2weeks">1-2 weeks</option>
+                            <option value="2-4weeks">2-4 weeks</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="additional-info">Additional Requirements</label>
+                        <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any specific features, design preferences, or special requests..."></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Digital Fixer Inquiry">
+                    <input type="hidden" name="_next" value="thank-you.html">
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i> Send My Request
+                    </button>
+                </form>
+                <div style="margin-top: 2rem; text-align: center; color: #666;">
+                    <p><i class="fas fa-envelope"></i> Or email us directly: <strong>digitalfixer7@gmail.com</strong></p>
+                    <p><i class="fas fa-clock"></i> We respond to all inquiries within 24 hours</p>
+                </div>name">Business Name *</label>
                         <input type="text" id="business-name" name="business-name" required>
                     </div>
                     <div class="form-group">
