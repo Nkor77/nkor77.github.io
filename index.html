@@ -865,30 +865,66 @@
             </div>
             <div class="form-container">
                 <form action="https://formspree.io/f/xgvzaqyp" method="POST">
-                    <div class="form-group">
-                        <label for="business-description">Tell us about your business *</label>
-                        <textarea id="business-description" name="business-description" rows="4" placeholder="Describe your business, target audience, and what you hope to achieve..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="timeline">Preferred Timeline</label>
-                        <select id="timeline" name="timeline">
-                            <option value="">Select timeline</option>
-                            <option value="asap">ASAP (Rush order)</option>
-                            <option value="1-2weeks">1-2 weeks</option>
-                            <option value="2-4weeks">2-4 weeks</option>
-                            <option value="flexible">Flexible</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="additional-info">Additional Requirements</label>
-                        <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any specific features, design preferences, or special requests..."></textarea>
-                    </div>
-                    <input type="hidden" name="_subject" value="New Digital Fixer Inquiry">
-                    <input type="hidden" name="_next" value="thank-you.html">
-                    <button type="submit" class="submit-button">
-                        <i class="fas fa-paper-plane"></i> Send My Request
-                    </button>
-                </form>
+    <div class="form-group">
+        <label for="contact-name">Your Name *</label>
+        <input type="text" id="contact-name" name="contact-name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="_replyto" required>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+    </div>
+
+    <div class="form-group">
+        <label for="package">Interested Package *</label>
+        <select id="package" name="package" required>
+            <option value="">Select a package</option>
+            <option value="basic">Basic - $250</option>
+            <option value="standard">Standard - $500</option>
+            <option value="premium">Premium - $950</option>
+            <option value="custom">Custom Quote</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="current-website">Current Website (if any)</label>
+        <input type="url" id="current-website" name="current-website" placeholder="https://yourwebsite.com">
+    </div>
+
+    <div class="form-group">
+        <label for="business-description">Tell us about your business *</label>
+        <textarea id="business-description" name="business-description" rows="4" placeholder="Describe your business, target audience, and what you hope to achieve..." required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="timeline">Preferred Timeline</label>
+        <select id="timeline" name="timeline">
+            <option value="">Select timeline</option>
+            <option value="asap">ASAP (Rush order)</option>
+            <option value="1-2weeks">1-2 weeks</option>
+            <option value="2-4weeks">2-4 weeks</option>
+            <option value="flexible">Flexible</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="additional-info">Additional Requirements</label>
+        <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any specific features, design preferences, or special requests..."></textarea>
+    </div>
+
+    <input type="hidden" name="_subject" value="New Digital Fixer Inquiry">
+    <input type="hidden" name="_next" value="thank-you.html">
+
+    <button type="submit" class="submit-button">
+        <i class="fas fa-paper-plane"></i> Send My Request
+    </button>
+</form>
+
                 <div style="margin-top: 2rem; text-align: center; color: #666;">
                     <p><i class="fas fa-envelope"></i> Or email us directly: <strong>digitalfixer7@gmail.com</strong></p>
                     <p><i class="fas fa-clock"></i> We respond to all inquiries within 24 hours</p>
