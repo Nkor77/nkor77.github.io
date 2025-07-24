@@ -1,169 +1,916 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Fixer for Small Businesses</title>
-  <meta name="description" content="Digital Fixer helps small businesses grow with website design, Google Business optimization, and branding services. Modernize your online presence today." />
-  <meta name="keywords" content="small business website, Google Business help, social media setup, local business SEO, branding, posters, flyers, logos" />
-  <meta name="author" content="Digital Fixer" />
-  <meta name="google-adsense-account" content="ca-pub-3744254991509107">
-  <link rel="canonical" href="https://yourdomain.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Fixer - Modernize Your Business Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Google AdSense Code -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3744254991509107"
-     crossorigin="anonymous"></script>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url('premium_photo-1681400745727-c69f8e47f524.avif');
-      background-size: cover;
-      background-position: center;
-      color: #333;
-    }
-    header {
-      background: rgba(13, 110, 253, 0.9);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-top: 0.5rem;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.95);
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #0d6efd;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    li {
-      margin-bottom: 0.75rem;
-    }
-    .button {
-      display: inline-block;
-      background: #198754;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1rem;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background: #157347;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    form button {
-      background: #0d6efd;
-      color: white;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    form button:hover {
-      background: #0a58ca;
-    }
-    footer {
-      background: #212529;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
-  </style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .plan-features li i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+
+        .plan-button {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .plan-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial-business {
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-button {
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+
+            .form-container {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .paypal-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .paypal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .paypal-btn {
+            background: #0070ba;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .paypal-btn:hover {
+            background: #005ea6;
+            transform: translateY(-2px);
+        }
+
+        .workflow {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .workflow-step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .workflow-step h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .workflow-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Digital Fixer</h1>
-    <p>We Make Local Businesses Look Modern, Trustworthy, and Easy to Find Online</p>
-  </header>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                Digital Fixer
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <section class="intro">
-    <h2>The Problem</h2>
-    <p>Over 60% of local businesses are losing customers because of poor online presence. Outdated websites, missing Google listings, and empty social media pages make your business look unprofessional. We’re here to change that.</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Modernize Your Business Online</h1>
+                <p>Professional websites, Google Business setup, and digital branding - all handled 100% online with no meetings required</p>
+                <a href="#contact" class="cta-button">Get Started Today</a>
+            </div>
+        </div>
+    </section>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li><strong>Website Design:</strong> Modern, mobile-ready sites built with Wix or Webflow</li>
-      <li><strong>Google Business Optimization:</strong> Appear on maps, get reviews, boost visibility</li>
-      <li><strong>Social Media Setup:</strong> Facebook business pages, reviews, and basic SEO to rank on Google</li>
-      <li><strong>Art & Branding:</strong> Logos, flyers, posters, and branded graphics for your business</li>
-    </ul>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Do</h2>
+                <p>Complete digital solutions for small businesses, delivered entirely online</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Website Creation</h3>
+                    <p>Professional, mobile-optimized websites built on Wix or Webflow. Clean, modern designs that convert visitors into customers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Google Business Profile</h3>
+                    <p>Complete setup and optimization of your Google Business Profile for maximum local visibility and SEO performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook Business Page</h3>
+                    <p>Professional Facebook Business page setup with review integration and social media optimization for your brand.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Logo & Branding Design</h3>
+                    <p>Custom logo design, promotional posters, and complete branding packages that make your business stand out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="pricing">
-    <h2>Pricing That Pays for Itself</h2>
-    <ul>
-      <li><strong>One-time Setup:</strong> $300–$1000 depending on your current state and goals</li>
-      <li><strong>Monthly Support:</strong> From $99/month for updates, SEO, and local marketing</li>
-    </ul>
-    <p>We’ll help you attract more customers, stand out from competitors, and grow your business—guaranteed.</p>
-    <a class="button" href="#contact">Claim Your Free Consultation</a>
-  </section>
+    <!-- Workflow Section -->
+    <section class="workflow">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our 100% Online Process</h2>
+                <p>No meetings, no phone calls, no hassle - just professional results delivered through email</p>
+            </div>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Submit Your Request</h3>
+                    <p>Fill out our contact form with your business details and requirements. We'll send you a detailed questionnaire via email.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>Email Consultation</h3>
+                    <p>We'll discuss your needs entirely through email exchanges. Send us your branding materials, photos, and content.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Design & Development</h3>
+                    <p>Our team creates your digital assets. We'll send progress updates and drafts for your review via email.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h3>Review & Launch</h3>
+                    <p>Final review through email, implement any changes, then launch your new digital presence. All files delivered digitally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Ready to get started? Let’s give your business the online boost it deserves.</p>
-    <form action="https://formspree.io/f/xqalapqo" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the package that fits your business needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Basic</div>
+                    <div class="plan-price">$250</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 5-page professional website</li>
+                        <li><i class="fas fa-check"></i> Mobile optimization</li>
+                        <li><i class="fas fa-check"></i> Basic Google Business setup</li>
+                        <li><i class="fas fa-check"></i> Contact form integration</li>
+                        <li><i class="fas fa-check"></i> 30 days email support</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectPlan('basic')">Choose Basic</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-price">$500</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 10-page professional website</li>
+                        <li><i class="fas fa-check"></i> Advanced Google Business optimization</li>
+                        <li><i class="fas fa-check"></i> Facebook Business page setup</li>
+                        <li><i class="fas fa-check"></i> Custom logo design</li>
+                        <li><i class="fas fa-check"></i> SEO optimization</li>
+                        <li><i class="fas fa-check"></i> 60 days email support</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectPlan('standard')">Choose Standard</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">$950</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Unlimited pages website</li>
+                        <li><i class="fas fa-check"></i> Complete Google Business optimization</li>
+                        <li><i class="fas fa-check"></i> Facebook + review integration</li>
+                        <li><i class="fas fa-check"></i> Full branding package</li>
+                        <li><i class="fas fa-check"></i> Custom poster designs</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO & analytics</li>
+                        <li><i class="fas fa-check"></i> 90 days email support</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectPlan('premium')">Choose Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+    <!-- PayPal Payment Section -->
+    <section class="paypal-section">
+        <div class="container">
+            <h2>Secure Payment Options</h2>
+            <p>Pay securely with PayPal - no account required</p>
+            <div class="paypal-buttons">
+                <a href="#" class="paypal-btn" onclick="payWithPayPal('basic')">
+                    <i class="fab fa-paypal"></i> Pay $250 (Basic)
+                </a>
+                <a href="#" class="paypal-btn" onclick="payWithPayPal('standard')">
+                    <i class="fab fa-paypal"></i> Pay $500 (Standard)
+                </a>
+                <a href="#" class="paypal-btn" onclick="payWithPayPal('premium')">
+                    <i class="fab fa-paypal"></i> Pay $950 (Premium)
+                </a>
+            </div>
+        </div>
+    </section>
 
-      <label for="message">What do you need help with?</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Real reviews from satisfied small business owners</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Digital Fixer transformed our online presence completely. The entire process was smooth, professional, and done entirely through email. Our new website has brought in 3x more customers!"
+                    </div>
+                    <div class="testimonial-author">Sarah Martinez</div>
+                    <div class="testimonial-business">Martinez Family Restaurant</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "I was amazed how they handled everything online. No meetings, no phone calls, just results. Our Google Business profile now shows up first in local searches. Highly recommend!"
+                    </div>
+                    <div class="testimonial-author">Mike Thompson</div>
+                    <div class="testimonial-business">Thompson Auto Repair</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "The logo and branding package exceeded our expectations. The communication through email was clear and efficient. Our business looks so much more professional now."
+                    </div>
+                    <div class="testimonial-author">Lisa Chen</div>
+                    <div class="testimonial-business">Chen's Beauty Salon</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Email us directly at <a href="mailto:digitalfixer7@gmail.com">digitalfixer7@gmail.com</a></p>
-
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://paypal.me/NikitaKornev872" target="_blank" class="button" style="background: #0070ba;">
-        💳 Donate / Pay with PayPal
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Digital Fixer. Trusted by local businesses. Boost your digital presence with us.</p>
-  </footer>
-</body>
-</html>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get Started Today</h2>
+                <p>Ready to modernize your business? Fill out the form below and we'll get back to you within 24 hours</p>
+            </div>
+            <div class="form-container">
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="business-name">Business Name *</label>
+                        <input type="text" id="business-name" name="business-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name">Your Name *</label>
+                        <input type="text" id="contact-name" name="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="_replyto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Interested Package *</label>
+                        <select id="package" name="package" required>
+                            <option value="">Select a package</option>
+                            <option value="basic">Basic - $250</option>
+                            <option value="standard">Standard - $500</option>
+                            <option value="premium">Premium - $950</option>
+                            <option value="custom">Custom Quote</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="current-website">Current Website (if any)</label>
+                        <input type="url" id="current-website" name="current-website" placeholder="https://yourwebsite.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="business-
