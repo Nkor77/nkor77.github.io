@@ -266,14 +266,15 @@
         .pricing-card.featured::before {
             content: 'MOST POPULAR';
             position: absolute;
-            top: 20px;
-            right: -30px;
+            top: 25px;
+            right: -40px;
             background: #ff6b6b;
             color: white;
-            padding: 5px 40px;
-            font-size: 0.8rem;
+            padding: 8px 45px;
+            font-size: 0.75rem;
             font-weight: bold;
             transform: rotate(45deg);
+            box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
         }
 
         .pricing-card:hover {
@@ -589,16 +590,10 @@
             }
         }
 
-        .paypal-section {
-            background: #f8f9fa;
-            padding: 40px 0;
-            text-align: center;
-        }
-
         .paypal-buttons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
@@ -821,8 +816,6 @@
         </div>
     </section>
 
-
-
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
@@ -925,37 +918,120 @@
     </button>
 </form>
 
+                
                 <div style="margin-top: 2rem; text-align: center; color: #666;">
                     <p><i class="fas fa-envelope"></i> Or email us directly: <strong>digitalfixer7@gmail.com</strong></p>
                     <p><i class="fas fa-clock"></i> We respond to all inquiries within 24 hours</p>
-                </div>name">Business Name *</label>
-                        <input type="text" id="business-name" name="business-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-name">Your Name *</label>
-                        <input type="text" id="contact-name" name="contact-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="_replyto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="package">Interested Package *</label>
-                        <select id="package" name="package" required>
-                            <option value="">Select a package</option>
-                            <option value="basic">Basic - $250</option>
-                            <option value="standard">Standard - $500</option>
-                            <option value="premium">Premium - $950</option>
-                            <option value="custom">Custom Quote</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="current-website">Current Website (if any)</label>
-                        <input type="url" id="current-website" name="current-website" placeholder="https://yourwebsite.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="business-
+                </div>
+            </div>
+            
+            <!-- PayPal Payment Integration -->
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: #333; margin-bottom: 1rem;">Secure Payment Options</h3>
+                <p style="color: #666; margin-bottom: 2rem;">Pay securely with PayPal - no account required</p>
+                <div class="paypal-buttons">
+                    <a href="#" class="paypal-btn" onclick="payWithPayPal('basic')">
+                        <i class="fab fa-paypal"></i> Pay $250 (Basic)
+                    </a>
+                    <a href="#" class="paypal-btn" onclick="payWithPayPal('standard')">
+                        <i class="fab fa-paypal"></i> Pay $500 (Standard)
+                    </a>
+                    <a href="#" class="paypal-btn" onclick="payWithPayPal('premium')">
+                        <i class="fab fa-paypal"></i> Pay $950 (Premium)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <h2>Free Social Media Graphics</h2>
+            <p>Download our promotional graphics to share your new digital presence</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <i class="fab fa-instagram"></i> Instagram Graphics
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fab fa-facebook"></i> Facebook Graphics
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-share-alt"></i> Social Media Kit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Digital Fixer</h3>
+                    <p>Modernizing small businesses online with professional websites, Google Business optimization, and digital branding - all handled 100% online.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="#services">Website Creation</a></p>
+                    <p><a href="#services">Google Business Profile</a></p>
+                    <p><a href="#services">Facebook Business Pages</a></p>
+                    <p><a href="#services">Logo & Branding Design</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> digitalfixer7@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> 24-hour email response</p>
+                    <p><i class="fas fa-globe"></i> 100% Online Service</p>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 Digital Fixer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function selectPlan(plan) {
+            document.getElementById('package').value = plan;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function payWithPayPal(plan) {
+            let amount;
+            switch(plan) {
+                case 'basic':
+                    amount = '250';
+                    break;
+                case 'standard':
+                    amount = '500';
+                    break;
+                case 'premium':
+                    amount = '950';
+                    break;
+            }
+            window.open('https://paypal.me/NikitaKornev872/' + amount, '_blank');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
