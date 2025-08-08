@@ -194,6 +194,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .service-card::before {
@@ -657,6 +658,17 @@
             color: #666;
             line-height: 1.6;
         }
+
+        /* Service click animation */
+        .service-card.clicked {
+            animation: clickPulse 0.3s ease;
+        }
+
+        @keyframes clickPulse {
+            0% { transform: scale(1) translateY(0); }
+            50% { transform: scale(0.95) translateY(-5px); }
+            100% { transform: scale(1) translateY(-10px); }
+        }
     </style>
 </head>
 <body>
@@ -687,7 +699,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Modernize Your Business Online</h1>
-                <p>Professional websites, Google Business setup, and digital branding - all handled 100% online with no meetings required</p>
+                <p>Professional websites, Google Business setup, advertising, and digital branding - all handled 100% online with no meetings required</p>
                 <a href="#contact" class="cta-button">Get Started Today</a>
             </div>
         </div>
@@ -701,33 +713,40 @@
                 <p>Complete digital solutions for small businesses, delivered entirely online</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="scrollToContact('website')">
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3>Website Creation</h3>
                     <p>Professional, mobile-optimized websites built on Wix or Webflow. Clean, modern designs that convert visitors into customers.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="scrollToContact('google')">
                     <div class="service-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3>Google Business Profile</h3>
                     <p>Complete setup and optimization of your Google Business Profile for maximum local visibility and SEO performance.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="scrollToContact('facebook')">
                     <div class="service-icon">
                         <i class="fab fa-facebook"></i>
                     </div>
                     <h3>Facebook Business Page</h3>
                     <p>Professional Facebook Business page setup with review integration and social media optimization for your brand.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="scrollToContact('branding')">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
                     <h3>Logo & Branding Design</h3>
                     <p>Custom logo design, promotional posters, and complete branding packages that make your business stand out.</p>
+                </div>
+                <div class="service-card" onclick="scrollToContact('advertising')">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Ad Generation & Creation</h3>
+                    <p>Professional advertisement creation for Google Ads, Facebook Ads, Instagram promotions, and print marketing materials.</p>
                 </div>
             </div>
         </div>
@@ -769,48 +788,105 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-title">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the package that fits your business needs</p>
+                <h2>Individual Service Pricing</h2>
+                <p>Choose the exact services you need for your business</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="plan-name">Basic</div>
-                    <div class="plan-price">$250</div>
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="plan-name">Website Creation</div>
+                    <div class="plan-price">$350</div>
                     <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> 5-page professional website</li>
-                        <li><i class="fas fa-check"></i> Mobile optimization</li>
-                        <li><i class="fas fa-check"></i> Basic Google Business setup</li>
+                        <li><i class="fas fa-check"></i> Up to 10 pages</li>
+                        <li><i class="fas fa-check"></i> Mobile-responsive design</li>
                         <li><i class="fas fa-check"></i> Contact form integration</li>
-                        <li><i class="fas fa-check"></i> 30 days email support</li>
+                        <li><i class="fas fa-check"></i> Basic SEO setup</li>
+                        <li><i class="fas fa-check"></i> SSL certificate</li>
+                        <li><i class="fas fa-check"></i> 30 days support</li>
                     </ul>
-                    <button class="plan-button" onclick="selectPlan('basic')">Choose Basic</button>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="plan-name">Standard</div>
-                    <div class="plan-price">$500</div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> 10-page professional website</li>
-                        <li><i class="fas fa-check"></i> Advanced Google Business optimization</li>
-                        <li><i class="fas fa-check"></i> Facebook Business page setup</li>
-                        <li><i class="fas fa-check"></i> Custom logo design</li>
-                        <li><i class="fas fa-check"></i> SEO optimization</li>
-                        <li><i class="fas fa-check"></i> 60 days email support</li>
-                    </ul>
-                    <button class="plan-button" onclick="selectPlan('standard')">Choose Standard</button>
+                    <button class="plan-button" onclick="selectService('website')">Order Website</button>
                 </div>
                 <div class="pricing-card">
-                    <div class="plan-name">Premium</div>
-                    <div class="plan-price">$950</div>
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="plan-name">Google Business Profile</div>
+                    <div class="plan-price">$150</div>
                     <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Unlimited pages website</li>
-                        <li><i class="fas fa-check"></i> Complete Google Business optimization</li>
-                        <li><i class="fas fa-check"></i> Facebook + review integration</li>
-                        <li><i class="fas fa-check"></i> Full branding package</li>
-                        <li><i class="fas fa-check"></i> Custom poster designs</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO & analytics</li>
-                        <li><i class="fas fa-check"></i> 90 days email support</li>
+                        <li><i class="fas fa-check"></i> Complete profile setup</li>
+                        <li><i class="fas fa-check"></i> Location verification</li>
+                        <li><i class="fas fa-check"></i> Business hours setup</li>
+                        <li><i class="fas fa-check"></i> Photo optimization</li>
+                        <li><i class="fas fa-check"></i> Review management setup</li>
+                        <li><i class="fas fa-check"></i> Local SEO optimization</li>
                     </ul>
-                    <button class="plan-button" onclick="selectPlan('premium')">Choose Premium</button>
+                    <button class="plan-button" onclick="selectService('google')">Order Google Setup</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="service-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="plan-name">Facebook Business Page</div>
+                    <div class="plan-price">$100</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Professional page setup</li>
+                        <li><i class="fas fa-check"></i> Cover photo design</li>
+                        <li><i class="fas fa-check"></i> Business info optimization</li>
+                        <li><i class="fas fa-check"></i> Call-to-action buttons</li>
+                        <li><i class="fas fa-check"></i> Review integration</li>
+                        <li><i class="fas fa-check"></i> Social media guidelines</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectService('facebook')">Order Facebook Page</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="plan-name">Logo & Branding</div>
+                    <div class="plan-price">$200</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Custom logo design</li>
+                        <li><i class="fas fa-check"></i> 3 concept variations</li>
+                        <li><i class="fas fa-check"></i> High-resolution files</li>
+                        <li><i class="fas fa-check"></i> Color palette guide</li>
+                        <li><i class="fas fa-check"></i> Business card design</li>
+                        <li><i class="fas fa-check"></i> Brand style guide</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectService('branding')">Order Branding</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="plan-name">Ad Creation Package</div>
+                    <div class="plan-price">$175</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 5 professional ad designs</li>
+                        <li><i class="fas fa-check"></i> Facebook/Instagram formats</li>
+                        <li><i class="fas fa-check"></i> Google Ads graphics</li>
+                        <li><i class="fas fa-check"></i> Print-ready versions</li>
+                        <li><i class="fas fa-check"></i> Multiple size variations</li>
+                        <li><i class="fas fa-check"></i> Ad copy suggestions</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectService('advertising')">Order Ad Package</button>
+                </div>
+            </div>
+            
+            <!-- Bundle Discount Section -->
+            <div style="margin-top: 4rem; text-align: center; background: #f8f9fa; padding: 2rem; border-radius: 15px;">
+                <h3 style="color: #333; margin-bottom: 1rem;">Bundle Discount Available!</h3>
+                <p style="color: #666; font-size: 1.1rem; margin-bottom: 1.5rem;">Order 3 or more services together and save 15% on your total</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <div style="background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <strong style="color: #667eea;">Full Business Package</strong><br>
+                        <span style="color: #666;">All 5 services: <strike>$975</strike> <strong style="color: #ff6b6b;">$829</strong></span>
+                    </div>
+                    <div style="background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <strong style="color: #667eea;">Starter Package</strong><br>
+                        <span style="color: #666;">Website + Google + Facebook: <strike>$600</strike> <strong style="color: #ff6b6b;">$510</strong></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -840,7 +916,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-text">
-                        "The logo and branding package exceeded our expectations. The communication through email was clear and efficient. Our business looks so much more professional now."
+                        "The logo, ads, and branding package exceeded our expectations. The communication through email was clear and efficient. Our business looks so much more professional now."
                     </div>
                     <div class="testimonial-author">Lisa Chen</div>
                     <div class="testimonial-business">Chen's Beauty Salon</div>
